@@ -29,9 +29,9 @@ export default new Router({
       component: ViewResult
     },
     {
-    path: '/playground',
-    name: 'Playground',
-    component: ViewPlayground
+      path: '/playground',
+      name: 'Playground',
+      component: ViewPlayground
     }
   ]
 })

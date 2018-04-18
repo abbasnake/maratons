@@ -1,22 +1,32 @@
 <template>
   <div id="app">
+    <the-helper></the-helper>
     <router-view/>
   </div>
 </template>
 
 <script>
+import TheHelper from '@/components/TheHelper/TheHelper'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    'the-helper': TheHelper
+  }
 }
 </script>
 
-<style>
+<!-- GLOBAL STYLES -->
+<style lang="scss">
+@import './scss/reset';
+@import './scss/global-styles';
+@import './scss/variables';
+</style>
+
+<!-- LOCAL STYLES -->
+<style lang="scss" scoped>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-color: #aaa;
+  height: 100vh;
 }
 </style>
