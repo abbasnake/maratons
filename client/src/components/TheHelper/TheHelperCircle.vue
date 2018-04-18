@@ -12,9 +12,12 @@ export default {
 
 <style lang="scss" scoped>
 .svg {
-  border: 1px solid black;
+  // border: 1px solid black;
   fill: #333;
   height: 100%;
+  // stroke: #fff;
+  // stroke-width: 5px;
+  // stroke-dasharray: 165;
   width: 100%;
 }
 
@@ -23,28 +26,28 @@ export default {
 
 .animation {
   animation:
-    a-hover 12s ease-in-out infinite alternate;
-    // hoverHorizontal 11s ease-in-out infinite alternate;
+    a-float 12s ease-in-out infinite alternate;
+    // a-dash 20s linear infinite;
 }
 
-@keyframes a-hover {
+@keyframes a-float {
   0% {
     transform: translate(0px, 0px);
   }
   15% {
-    transform: translate(2px, 15px);
+    transform: translate(9px, -25px);
   }
   30% {
-    transform: translate(3px, 0px);
+    transform: translate(3px, 11px);
   }
   50% {
-    transform: translate(1px, 20px);
+    transform: translate(1px, -40px);
   }
   65% {
-    transform: translate(-2px, 0px);
+    transform: translate(-2px, 22px);
   }
   85% {
-    transform: translate(0px, 17px);
+    transform: translate(0px, -47px);
   }
   100% {
     transform: translate(0px, 0px);
