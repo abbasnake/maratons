@@ -1,10 +1,15 @@
 <template>
-  <h1>choose view</h1>
+  <form-input></form-input>
 </template>
 
 <script>
+import TheFormInput from '@/components/TheFormInput'
+
 export default {
-  name: 'ViewChoose'
+  name: 'ViewChoose',
+  components: {
+    'form-input': TheFormInput
+  }
 }
 </script>
 
