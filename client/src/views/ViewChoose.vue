@@ -1,25 +1,36 @@
 <template>
   <div>
-    <default-header>HEADER CHOOSE</default-header>
-    <default-input />
-    <default-select></default-select>
+    <default-container>
+      <default-header>HEADER CHOOSE</default-header>
+    </default-container>
+
+    <default-container>
+      <default-input />
+    </default-container>
+
+    <default-container>
+      <app-select></app-select>
+    </default-container>
+
     <button>Submit</button>
     <p>description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae in odio ea nostrum suscipit nesciunt porro optio eaque praesentium possimus, veritatis quas et iste, quia cumque neque, excepturi. Numquam, labore.</p>
   </div>
 </template>
 
 <script>
+import DefaultContainer from '@/components/DefaultContainer'
 import DefaultHeader from '@/components/DefaultHeader'
 import DefaultInput from '@/components/DefaultInput'
-import DefaultSelect from '@/components/DefaultSelect'
+import AppSelect from '@/components/AppSelect'
 import TheFormInput from '@/components/TheFormInput'
 
 export default {
   name: 'ViewChoose',
   components: {
+    'default-container': DefaultContainer,
     'default-header': DefaultHeader,
     'default-input': DefaultInput,
-    'default-select': DefaultSelect,
+    'app-select': AppSelect,
     'form-input': TheFormInput
   }
 }

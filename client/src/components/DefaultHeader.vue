@@ -12,12 +12,9 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  align-items: center;
-  display: grid;
   font-size: 7vw;
   font-weight: bold;
-  justify-items: center;
-  padding: 10px;
+  padding: 5px;
 }
 
 @media screen and (min-width:400px) {
