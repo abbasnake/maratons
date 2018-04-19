@@ -15,17 +15,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-.nput {
+.input {
   background-color: #ccc;
   border: none;
   border-radius: 5px;
-  font-size: 3vw;
+  font-size: 5vw;
   padding: 5px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   max-width: 200px;
-  width: 25%;
+  width: 40%;
   z-index: 1;
   &:focus {
     width: 100%;

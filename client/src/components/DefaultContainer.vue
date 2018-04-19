@@ -8,11 +8,11 @@
 export default {
   name: 'DefaultContainer',
   props: {
-    containerHeight: {
+    setHeight: {
       type: String,
       default: 'auto'
     },
-    containerWidth: {
+    setWidth: {
       type: String,
       default: '100%'
     }
@@ -20,8 +20,8 @@ export default {
   computed: {
     styleObject () {
       return {
-        'height': this.containerHeight,
-        'width': this.containerWidth
+        'height': this.setHeight,
+        'width': this.setWidth
       }
     }
   }
@@ -33,6 +33,8 @@ export default {
   align-items: center;
   display: grid;
   justify-items: center;
+  max-width: 600px;
+  margin: 0 auto;
   padding: 5px;
 }
 </style>
