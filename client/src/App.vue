@@ -12,6 +12,9 @@ export default {
   name: 'App',
   components: {
     'the-helper': TheHelper
+  },
+  mounted () {
+    this.$store.dispatch('getData') // loading data to vuex store
   }
 }
 </script>

@@ -9,7 +9,7 @@ export default [
         answer: 'correct 1-1',
         fakes: [
           'fake 1',
-          'fake 2', 
+          'fake 2',
           'fake 3'
         ]
       },
@@ -18,7 +18,7 @@ export default [
         answer: 'correct 1-2',
         fakes: [
           'fake 11',
-          'fake 22', 
+          'fake 22',
           'fake 33'
         ]
       },
@@ -27,10 +27,10 @@ export default [
         answer: 'correct 1-3',
         fakes: [
           'fake 111',
-          'fake 222', 
+          'fake 222',
           'fake 333'
         ]
-      },
+      }
     ]
   },
   {
@@ -43,7 +43,7 @@ export default [
         answer: 'correct 2-1',
         fakes: [
           'fake a',
-          'fake b', 
+          'fake b',
           'fake c'
         ]
       },
@@ -52,7 +52,7 @@ export default [
         answer: 'correct 2-2',
         fakes: [
           'fake aa',
-          'fake bb', 
+          'fake bb',
           'fake cc'
         ]
       },
@@ -61,10 +61,10 @@ export default [
         answer: 'correct 2-3',
         fakes: [
           'fake aaa',
-          'fake bbb', 
+          'fake bbb',
           'fake ccc'
         ]
-      },
+      }
     ]
   },
   {
@@ -77,7 +77,7 @@ export default [
         answer: 'correct 3-1',
         fakes: [
           'fake',
-          'ffake', 
+          'ffake',
           'fffake'
         ]
       },
@@ -86,7 +86,7 @@ export default [
         answer: 'correct 3-2',
         fakes: [
           'fakee',
-          'faakee', 
+          'faakee',
           'faaakee'
         ]
       },
@@ -95,11 +95,10 @@ export default [
         answer: 'correct 3-3',
         fakes: [
           'fakeee',
-          'fakkeee', 
+          'fakkeee',
           'fakkkeee'
         ]
-      },
+      }
     ]
   }
 ]
-

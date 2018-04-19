@@ -1,10 +1,15 @@
 <template>
-  <button class="button" type="submit">Submit</button>
+  <button class="button" type="submit" @click="onCLick">Submit</button>
 </template>
 
 <script>
 export default {
-  name: 'DefaultButton'
+  name: 'DefaultButton',
+  methods: {
+    onCLick () {
+      console.log(this.$store.getters.currentTestDescription)
+    }
+  }
 }
 </script>
 
