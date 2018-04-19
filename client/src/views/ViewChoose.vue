@@ -5,7 +5,7 @@
     </default-container>
 
     <default-container>
-      <default-input />
+      <default-input/>
     </default-container>
 
     <default-container>
