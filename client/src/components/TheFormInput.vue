@@ -23,6 +23,6 @@ export default {
 
 <style lang="scss" scoped>
 .form {
-  border: 1px solid blue;
+  // border: 1px solid blue;
 }
 </style>

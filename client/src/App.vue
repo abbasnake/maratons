@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
-    <the-helper></the-helper>
-    <router-view/>
+  <div id="app" class="app">
+    <!-- <the-helper></the-helper> -->
+    <router-view class="app__views"/>
   </div>
 </template>
 
@@ -25,8 +25,12 @@ export default {
 
 <!-- LOCAL STYLES -->
 <style lang="scss" scoped>
-#app {
+.app {
   background-color: #aaa;
+  display: grid;
   height: 100vh;
+  &__views {
+    // border: 3px solid pink;
+  }
 }
 </style>
