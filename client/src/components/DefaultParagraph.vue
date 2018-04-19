@@ -1,34 +1,18 @@
 <template>
   <transition name="fade" mode="out-in">
-    <p class="paragraph" :key="stateTransition">{{ description }}</p>
+    <!-- description is added to :key to trick the
+    transition that it is changing to another
+    element, doesn't work otherwise -->
+    <p class="paragraph" :key="description">{{ description }}</p>
   </transition>
 </template>
 
 <script>
 export default {
   name: 'DefaultParagraph',
-  data () {
-    return {
-      stateTransition: 0
-    }
-  },
   computed: {
     description () {
       return this.$store.getters.currentTestDescription
-    }
-  },
-  watch: {
-    description () {
-      /*
-      ** This is to make the transition animaton work.
-      ** If transition happens between the same elements,
-      ** or in this case just the content of the same
-      ** element changes, transition has to be tricked
-      ** that it is actually a different one, hence the
-      ** :key property is incremented each time the
-      ** computed property above changes
-      */
-      this.stateTransition++
     }
   }
 }
