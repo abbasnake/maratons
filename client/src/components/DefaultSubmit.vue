@@ -7,7 +7,7 @@ export default {
   name: 'DefaultButton',
   methods: {
     onCLick () {
-      console.log(this.$store.getters.currentTestDescription)
+      console.log('submit button')
     }
   }
 }

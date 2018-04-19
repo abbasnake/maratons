@@ -1,15 +1,24 @@
 <template>
-  <select class="select" name="" id="">
+  <select class="select" name="testChoice" @change="changeTest($event)" required>
     <option value="" selected disabled>choose</option>
-    <option value="1">One</option>
-    <option value="2">TwoTwo</option>
-    <option value="3">333</option>
+    <option v-for="test in allTests" :value="test.id">{{ test.name }}</option>
   </select>
 </template>
 
 <script>
 export default {
-  name: 'AppSelect'
+  name: 'AppSelect',
+  computed: {
+    allTests () {
+      return this.$store.getters.allData
+    }
+  },
+  methods: {
+    changeTest (e) {
+      let testNumber = parseInt(e.target.value)
+      this.$store.dispatch('changeCurrentTest', testNumber)
+    }
+  }
 }
 </script>
 

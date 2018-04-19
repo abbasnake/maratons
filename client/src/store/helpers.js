@@ -10,7 +10,7 @@ const getKeyValues = (data, key) => {
 const getCurrentTestKeyValue = (data, id, key) => {
   let value = null
   if (!id) {
-    value = 'NO ID SET'
+    value = ''
   } else {
     let testIndex = findCurrentTestIndex(data, id)
     value = data[testIndex][key]
