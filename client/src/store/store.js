@@ -1,20 +1,24 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import data from './data.js'
-import { getKeyValues, getCurrentTestDescription } from './helpers.js'
+import {
+  getKeyValues,
+  getCurrentTestKeyValue
+} from './helpers.js'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    currentTestId: null,
+    currentTestId: 1,
     data: [],
     username: ''
   },
   getters: {
     username: state => state.username,
     currentTestId: state => state.currentTestId,
-    currentTestDescription: state => getCurrentTestDescription(state.data, state.currentTestId),
+    currentTestDescription: state => getCurrentTestKeyValue(state.data, state.currentTestId, 'description'),
+    currentTestQuestions: state => getCurrentTestKeyValue(state.data, state.currentTestId, 'questions'),
     testNames: state => getKeyValues(state.data, 'name')
   },
   mutations: {

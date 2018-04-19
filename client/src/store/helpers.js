@@ -7,28 +7,29 @@ const getKeyValues = (data, key) => {
   return array
 }
 
-const getCurrentTestDescription = (data, id) => {
-  let description = ''
-  /*
-  ** If id is set then loop through data
-  ** and mach id's, the correct ones description
-  ** is set to the let above. If not, return
-  ** 'no id set'
-  */
-  if (id) {
-    for (let i = 0; i < data.length; i++) {
-      if (id === data[i].id) {
-        description = data[i].description
-        i = data.length // if description found set i high to exit loop
-      }
-    }
+const getCurrentTestKeyValue = (data, id, key) => {
+  let value = null
+  if (!id) {
+    value = 'NO ID SET'
   } else {
-    description = 'no id set'
+    let testIndex = findCurrentTestIndex(data, id)
+    value = data[testIndex][key]
   }
-  return description
+  return value
+}
+
+const findCurrentTestIndex = (data, id) => {
+  let index = null
+  for (let i = 0; i < data.length; i++) {
+    if (id === data[i].id) {
+      index = i
+      i = data.length // when value found, end loop
+    }
+  }
+  return index
 }
 
 export {
   getKeyValues,
-  getCurrentTestDescription
+  getCurrentTestKeyValue
 }
