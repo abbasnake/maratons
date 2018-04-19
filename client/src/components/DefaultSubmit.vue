@@ -3,14 +3,14 @@
 </template>
 
 <script>
-  export default {
-    name: 'DefaultButton'
-  }
+export default {
+  name: 'DefaultButton'
+}
 </script>
 
 <style lang="scss" scoped>
-  .button {
-    border-radius: 5px;
-    padding: 5px;
-  }
+.button {
+  border-radius: 5px;
+  padding: 5px;
+}
 </style>

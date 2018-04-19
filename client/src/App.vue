@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="app">
     <!-- <the-helper></the-helper> -->
-    <router-view class="app__views"/>
+    <router-view/>
   </div>
 </template>
 
@@ -29,8 +29,5 @@ export default {
   background-color: #aaa;
   display: grid;
   height: 100vh;
-  &__views {
-    // border: 3px solid pink;
-  }
 }
 </style>
