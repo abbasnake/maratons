@@ -1,3 +1,9 @@
+<!--
+** Universal container that centers content horizontally
+** and vertically, can be used for single elements
+** or groups (in which case the grid gap prop will take effect)
+-->
+
 <template>
   <div class="container" :style="styleObject">
     <slot></slot>

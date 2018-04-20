@@ -1,8 +1,10 @@
 <template>
   <transition name="slide" mode="out-in">
-    <!-- description is added to :key to trick the
-    transition that it is changing to another
-    element, doesn't work otherwise -->
+    <!--
+    ** description is added to :key to trick the
+    ** transition that it is changing to another
+    ** element, doesn't work otherwise
+    -->
     <p class="paragraph" :key="description">{{ description }}</p>
   </transition>
 </template>
