@@ -2,7 +2,9 @@
 
 ### global-styles
 
-This is for gobal default styles like "a" tags not having underline or "li" tags not having bullet points etc. This file is imported in App.vue unscoped style tags to apply to everything
+This is for gobal default styles like "a" tags not having underline or "li" tags not having bullet points etc. This file is imported in App.vue unscoped style tags to apply to everything.
+
+Added overflow: hidden to every element, have to check without it at the end to see if anything goes out of bounds.
 
 ### reset
 
