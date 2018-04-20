@@ -3,7 +3,7 @@
   class="input"
   type="text"
   aria-label="Username"
-  placeholder="username"
+  placeholder="ENTER USERNAME"
   required
   >
 </template>
