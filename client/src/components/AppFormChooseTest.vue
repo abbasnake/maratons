@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="onSubmit" method="POST">
+  <form @submit.prevent="onSubmit($event)" method="POST">
     <default-container>
       <default-input/>
       <app-select/>
@@ -23,8 +23,10 @@ export default {
     'default-button': DefaultButton
   },
   methods: {
-    onSubmit () {
-      console.log('submitting')
+    onSubmit (e) {
+      const username = e.target[0].value
+      this.$store.dispatch('setUsername', username)
+      this.$router.push({path: '/test'})
     }
   }
 }

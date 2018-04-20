@@ -28,6 +28,9 @@ export default new Vuex.Store({
     },
     changeCurrentTestId (state, payload) {
       state.currentTestId = payload
+    },
+    setUsername (state, payload) {
+      state.username = payload
     }
   },
   actions: {
@@ -36,6 +39,9 @@ export default new Vuex.Store({
     },
     changeCurrentTest (context, payload) {
       context.commit('changeCurrentTestId', payload)
+    },
+    setUsername (context, payload) {
+      context.commit('setUsername', payload)
     }
   }
 })
