@@ -14,9 +14,10 @@ export default {
       cx: 100,
       cy: 100,
       radius: 50,
-      ySpeed: 0.2,
+      ySpeed: 0.15,
       xSpeed: 0.3,
-      hoverRange: 20
+      hoverRange: 20, // for hoverBorder method
+      hoverAnimationOn: true
     }
   },
   mounted () {
@@ -29,6 +30,14 @@ export default {
       this.cy = this.boxHeight / 2
     },
     avoidBorders () {
+      if (this.cy > this.boxHeight - this.radius || this.cy < 0 + this.radius) {
+        this.cy = this.boxHeight / 2
+      }
+      if (this.cx > this.boxWidth - this.radius || this.cx < 0 + this.radius) {
+        this.cx = this.boxWidth / 2
+      }
+    },
+    hoverBorder () {
       if (this.cy > this.boxHeight / 2 + this.hoverRange || this.cy < this.boxHeight / 2 - this.hoverRange) {
         this.ySpeed *= -1
       }
@@ -37,17 +46,21 @@ export default {
       }
     },
     hover () {
-      let speed = this.xSpeed * (Math.random() - Math.random())
-      this.cx += speed
+      let xDeviation = this.xSpeed * (Math.random() - Math.random())
+      this.cx += xDeviation
       this.cy += this.ySpeed
     },
-    animation () {
-      requestAnimationFrame(this.animation)
+    hoverAnimation () {
       this.hover()
+      this.hoverBorder()
       this.avoidBorders()
     },
+    mainAnimation () {
+      requestAnimationFrame(this.mainAnimation)
+      if (this.hoverAnimationOn) { this.hoverAnimation() }
+    },
     loop () {
-      requestAnimationFrame(this.animation)
+      requestAnimationFrame(this.mainAnimation)
     }
   }
 }
@@ -69,27 +82,27 @@ export default {
   // }
 }
 
-@keyframes a-float {
-  0% {
-    transform: translate(0px, 0px);
-  }
-  15% {
-    transform: translate(11px, -25px);
-  }
-  30% {
-    transform: translate(13px, 11px);
-  }
-  50% {
-    transform: translate(1px, -40px);
-  }
-  65% {
-    transform: translate(-20px, 22px);
-  }
-  85% {
-    transform: translate(-5px, -47px);
-  }
-  100% {
-    transform: translate(0px, 0px);
-  }
-}
+// @keyframes a-float {
+//   0% {
+//     transform: translate(0px, 0px);
+//   }
+//   15% {
+//     transform: translate(11px, -25px);
+//   }
+//   30% {
+//     transform: translate(13px, 11px);
+//   }
+//   50% {
+//     transform: translate(1px, -40px);
+//   }
+//   65% {
+//     transform: translate(-20px, 22px);
+//   }
+//   85% {
+//     transform: translate(-5px, -47px);
+//   }
+//   100% {
+//     transform: translate(0px, 0px);
+//   }
+// }
 </style>
