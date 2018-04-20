@@ -1,5 +1,5 @@
 <template>
-  <transition name="fade" mode="out-in">
+  <transition name="slide" mode="out-in">
     <!-- description is added to :key to trick the
     transition that it is changing to another
     element, doesn't work otherwise -->
@@ -20,13 +20,16 @@ export default {
 
 <style lang="scss" scoped>
 .paragraph {
-  opacity: 1;
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .2s;
+.slide-enter-active {
+  transition: all .3s ease-in-out;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.slide-leave-active {
+  transition: all .3s ease-in-out;
+}
+.slide-enter, .slide-leave-to {
+  transform: translateX(1000px);
   opacity: 0;
 }
 </style>

@@ -8,18 +8,14 @@
 export default {
   name: 'DefaultContainer',
   props: {
-    setHeight: {
-      type: String,
-      default: 'auto'
-    },
-    setWidth: {
-      type: String,
-      default: '100%'
-    }
+    setGap: {type: String, default: '20px'},
+    setHeight: {type: String, default: 'auto'},
+    setWidth: {type: String, efault: '100%'}
   },
   computed: {
     styleObject () {
       return {
+        'grid-gap': this.setGap,
         'height': this.setHeight,
         'width': this.setWidth
       }

@@ -2,21 +2,9 @@
   <div>
     <default-container>
       <default-header>HEADER CHOOSE</default-header>
-    </default-container>
-
-    <default-container>
       <default-input/>
-    </default-container>
-
-    <default-container>
       <app-select></app-select>
-    </default-container>
-    
-    <default-container>
       <default-submit></default-submit>
-    </default-container>
-
-    <default-container>
       <default-paragraph></default-paragraph>
     </default-container>
   </div>
