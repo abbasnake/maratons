@@ -10,7 +10,7 @@ export default {
   props: {
     setGap: {type: String, default: '20px'},
     setHeight: {type: String, default: 'auto'},
-    setWidth: {type: String, efault: '100%'}
+    setWidth: {type: String, default: '100%'}
   },
   computed: {
     styleObject () {
