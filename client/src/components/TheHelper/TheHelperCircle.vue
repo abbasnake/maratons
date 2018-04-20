@@ -1,6 +1,6 @@
 <template>
   <svg class="svg" xmlns="http://www.w3.org/2000/svg" :viewBox="`0 0 ${boxWidth} ${boxHeight}`">
-    <circle class="svg__circle" :cx="cx" :cy="cy" r="50"/>
+    <circle class="svg__circle" :cx="cx" :cy="cy" :r="radius"/>
   </svg>
 </template>
 
@@ -12,21 +12,39 @@ export default {
       boxWidth: 200,
       boxHeight: 200,
       cx: 100,
-      cy: 100
+      cy: 100,
+      radius: 50,
+      ySpeed: 0.2,
+      xSpeed: 0.3,
+      hoverRange: 20
     }
   },
   mounted () {
     this.placeCircleInMiddle()
-    // this.loop()
+    this.loop()
   },
   methods: {
     placeCircleInMiddle () {
-      this.cx = this.boxWidth/2
-      this.cy = this.boxHeight/2
+      this.cx = this.boxWidth / 2
+      this.cy = this.boxHeight / 2
+    },
+    avoidBorders () {
+      if (this.cy > this.boxHeight / 2 + this.hoverRange || this.cy < this.boxHeight / 2 - this.hoverRange) {
+        this.ySpeed *= -1
+      }
+      if (this.cx > this.boxWidth / 2 + 20 || this.cx < this.boxWidth / 2 - 20) { // not correct, needs different physics
+        this.xSpeed *= -1
+      }
+    },
+    hover () {
+      let speed = this.xSpeed * (Math.random() - Math.random())
+      this.cx += speed
+      this.cy += this.ySpeed
     },
     animation () {
-      this.cx++
       requestAnimationFrame(this.animation)
+      this.hover()
+      this.avoidBorders()
     },
     loop () {
       requestAnimationFrame(this.animation)
@@ -45,10 +63,10 @@ export default {
   ** ANIMATION SHORTHAND
   ** animation: name duration timing-function delay iteration-count direction fill-mode play-state;
   */
-  &__circle {
-    animation:
-      a-float 12s ease-in-out infinite alternate;
-  }
+  // &__circle {
+  //   animation:
+  //     a-float 12s ease-in-out infinite alternate;
+  // }
 }
 
 @keyframes a-float {
