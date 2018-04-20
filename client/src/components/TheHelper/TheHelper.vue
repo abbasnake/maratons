@@ -1,7 +1,7 @@
 <template>
-  <div class="helper animation">
+  <svg class="helper animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
     <helper-circle></helper-circle>
-  </div>
+  </svg>
 </template>
 
 <script>
@@ -19,6 +19,7 @@ export default {
 $size: 80px;
 
 .helper {
+  border: 1px solid white;
   position: absolute;
   height: $size;
   left: 20px;

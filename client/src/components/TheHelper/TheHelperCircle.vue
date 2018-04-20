@@ -1,12 +1,37 @@
 <template>
-  <svg class="svg" viewBox="0 0 200 200">
-    <circle class="svg__circle" cx="50%" cy="50%" r="50"/>
+  <svg class="svg" xmlns="http://www.w3.org/2000/svg" :viewBox="`0 0 ${boxWidth} ${boxHeight}`">
+    <circle class="svg__circle" :cx="cx" :cy="cy" r="50"/>
   </svg>
 </template>
 
 <script>
 export default {
-  name: 'TheHelperCircle'
+  name: 'TheHelperCircle',
+  data () {
+    return {
+      boxWidth: 200,
+      boxHeight: 200,
+      cx: 100,
+      cy: 100
+    }
+  },
+  mounted () {
+    this.placeCircleInMiddle()
+    // this.loop()
+  },
+  methods: {
+    placeCircleInMiddle () {
+      this.cx = this.boxWidth/2
+      this.cy = this.boxHeight/2
+    },
+    animation () {
+      this.cx++
+      requestAnimationFrame(this.animation)
+    },
+    loop () {
+      requestAnimationFrame(this.animation)
+    }
+  }
 }
 </script>
 
