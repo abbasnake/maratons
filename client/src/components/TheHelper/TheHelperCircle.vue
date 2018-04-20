@@ -14,7 +14,7 @@ export default {
       cx: 100,
       cy: 100,
       radius: 50,
-      ySpeed: 0.15,
+      ySpeed: 0.1,
       xSpeed: 0.3,
       hoverRange: 20, // for hoverBorder method
       hoverAnimationOn: true

@@ -19,7 +19,7 @@ export default {
 $size: 80px;
 
 .helper {
-  border: 1px solid white;
+  // border: 1px solid white;
   position: absolute;
   height: $size;
   left: 20px;
