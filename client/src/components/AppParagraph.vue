@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'DefaultParagraph',
+  name: 'AppParagraph',
   computed: {
     description () {
       return this.$store.getters.currentTestDescription

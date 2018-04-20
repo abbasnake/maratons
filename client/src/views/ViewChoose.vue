@@ -4,8 +4,8 @@
       <default-header>HEADER CHOOSE</default-header>
       <default-input/>
       <app-select></app-select>
-      <default-submit></default-submit>
-      <default-paragraph></default-paragraph>
+      <default-button set-type="submit">Submit</default-button>
+      <app-paragraph></app-paragraph>
     </default-container>
   </div>
 </template>
@@ -14,8 +14,8 @@
 import DefaultContainer from '@/components/DefaultContainer'
 import DefaultHeader from '@/components/DefaultHeader'
 import DefaultInput from '@/components/DefaultInput'
-import DefaultSubmit from '@/components/DefaultSubmit'
-import DefaultParagraph from '@/components/DefaultParagraph'
+import DefaultButton from '@/components/DefaultButton'
+import AppParagraph from '@/components/AppParagraph'
 import AppSelect from '@/components/AppSelect'
 import TheFormInput from '@/components/TheFormInput'
 
@@ -25,8 +25,8 @@ export default {
     'default-container': DefaultContainer,
     'default-header': DefaultHeader,
     'default-input': DefaultInput,
-    'default-submit': DefaultSubmit,
-    'default-paragraph': DefaultParagraph,
+    'default-button': DefaultButton,
+    'app-paragraph': AppParagraph,
     'app-select': AppSelect,
     'form-input': TheFormInput
   }

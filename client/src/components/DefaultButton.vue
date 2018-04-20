@@ -1,13 +1,18 @@
 <template>
-  <button class="button" type="submit" @click="onCLick">Submit</button>
+  <button class="button" :type="setType" @click="onCLick">
+    <slot></slot>
+  </button>
 </template>
 
 <script>
 export default {
   name: 'DefaultButton',
+  props: {
+    setType: {type: String, default: ''}
+  },
   methods: {
     onCLick () {
-      console.log('submit button')
+      this.$emit('clicked')
     }
   }
 }
