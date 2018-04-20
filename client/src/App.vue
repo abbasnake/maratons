@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="app">
-    <!-- <the-helper></the-helper> -->
+    <the-helper></the-helper>
     <router-view/>
   </div>
 </template>
@@ -29,7 +29,7 @@ export default {
 <!-- LOCAL STYLES -->
 <style lang="scss" scoped>
 .app {
-  background-color: #aaa;
+  background-color: #888;
   display: grid;
   height: 100vh;
 }

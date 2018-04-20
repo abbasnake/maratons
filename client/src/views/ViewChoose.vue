@@ -1,9 +1,9 @@
 <template>
   <div>
     <default-container>
-      <default-header>HEADER CHOOSE</default-header>
+      <default-header>SAY YOUR NAME AND CHOOSE A TEST</default-header>
       <app-form-choose-test/>
-      <app-paragraph></app-paragraph>
+      <app-paragraph/>
     </default-container>
   </div>
 </template>

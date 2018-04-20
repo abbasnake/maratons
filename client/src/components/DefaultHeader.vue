@@ -15,6 +15,7 @@ export default {
   font-size: 7vw;
   font-weight: bold;
   padding: 5px;
+  text-align: center;
 }
 
 @media screen and (min-width:400px) {
