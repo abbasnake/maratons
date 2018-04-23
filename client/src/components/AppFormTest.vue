@@ -3,6 +3,7 @@
     <default-container>
       <div>{{currentQuestion}}</div>
       <!-- eslint-disable -->
+      <!-- will have to add the :key attribute I suppose, perhaps another randomly generated one -->
       <default-input-radio v-for="answer in currentAnswers" :input-name="currentQuestion" :input-value="answer">{{ answer }}</default-input-radio>
       <default-button set-type="submit">Submit</default-button>
     </default-container>
