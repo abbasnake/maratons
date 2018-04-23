@@ -12,6 +12,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     currentTestId: null,
+    currentQuestionIndex: 0,
     data: [],
     username: '',
     helperAnimations
@@ -23,6 +24,7 @@ export default new Vuex.Store({
     testNames: state => getKeyValues(state.data, 'name'),
     currentTestDescription: state => getCurrentTestKeyValue(state.data, state.currentTestId, 'description'),
     currentTestQuestions: state => getCurrentTestKeyValue(state.data, state.currentTestId, 'questions'),
+    currentQuestionIndex: state => state.currentQuestionIndex,
     helperAnimations: state => state.helperAnimations
   },
   mutations: {
@@ -40,6 +42,9 @@ export default new Vuex.Store({
     },
     changeContentAnimation (state) {
       state.helperAnimations.changeContent = true
+    },
+    nextQuestion (state) {
+      state.currentQuestionIndex++
     }
   },
   actions: {
@@ -59,6 +64,9 @@ export default new Vuex.Store({
       setTimeout(() => {
         context.commit('resetAnimations')
       }, 500) // this perhaps needs to be as a payload
+    },
+    nextQuestion (context) {
+      context.commit('nextQuestion')
     }
   }
 })

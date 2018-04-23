@@ -6,13 +6,18 @@
       :id="randomId"
       required
     >
-    <label :for="randomId">{{ randomId }}</label>
+    <label :for="randomId">
+      <slot></slot>
+    </label>
   </div>
 </template>
 
 <script>
 export default {
   name: 'DefaultInputRadio',
+  props: {
+
+  },
   data () {
     return {
       randomId: ''
@@ -23,7 +28,7 @@ export default {
   },
   methods: {
     createRandomId () {
-      this.randomId = Math.random().toString(36).substr(2, 10);
+      this.randomId = Math.random().toString(36).substr(2, 10)
     }
   }
 }

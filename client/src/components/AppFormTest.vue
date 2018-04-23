@@ -1,9 +1,9 @@
 <template>
-  <form @submit.prevent="onSubmit($event)" method="POST">
+  <form @submit.prevent="onSubmit" method="POST">
     <default-container>
-      <default-input-radio/>
-      <default-input-radio/>
-      <default-input-radio/>
+      <div>{{currentQuestion}}</div>
+      <!-- eslint-disable -->
+      <default-input-radio v-for="answer in currentAnswers">{{ answer }}</default-input-radio>
       <default-button set-type="submit">Submit</default-button>
     </default-container>
   </form>
@@ -21,14 +21,30 @@ export default {
     'default-button': DefaultButton,
     'default-input-radio': DefaultInputRadio
   },
+  computed: {
+    questions () {
+      return this.$store.getters.currentTestQuestions
+    },
+    currentQuestionIndex () {
+      return this.$store.getters.currentQuestionIndex
+    },
+    currentQuestion () {
+      return this.questions[this.currentQuestionIndex].question
+    },
+    currentAnswers () {
+      let answers = this.questions[this.currentQuestionIndex].fakes // set to fake answers
+      answers.push(this.questions[this.currentQuestionIndex].answer) // add corrct answer
+      answers = answers.map(a => [Math.random(), a]).sort((a, b) => a[0] - b[0]).map((a) => a[1]) // shuffle/found online
+      return answers
+    }
+  },
   methods: {
     onSubmit (e) {
-      console.log('answer test form')
-      // const username = e.target[0].value
-      // this.$store.dispatch('setUsername', username)
-      // this.$store.dispatch('changeContentAnimation')
-      // this.$store.dispatch('resetAnimations')
-      // this.$router.push({path: '/test'})
+      if (this.currentQuestionIndex === this.questions.length - 1) {
+        this.$router.push({path: '/result'})
+      } else {
+        this.$store.dispatch('nextQuestion')
+      }
     }
   }
 }
