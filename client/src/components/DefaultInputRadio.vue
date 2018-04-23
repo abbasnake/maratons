@@ -2,7 +2,8 @@
   <div>
     <input
       type="radio"
-      name="answer"
+      :value="inputValue"
+      :name="inputName"
       :id="randomId"
       required
     >
@@ -16,7 +17,8 @@
 export default {
   name: 'DefaultInputRadio',
   props: {
-
+    inputName: {type: String, default: 'answer'},
+    inputValue: {type: String}
   },
   data () {
     return {

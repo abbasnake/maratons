@@ -3,7 +3,7 @@
     <default-container>
       <div>{{currentQuestion}}</div>
       <!-- eslint-disable -->
-      <default-input-radio v-for="answer in currentAnswers">{{ answer }}</default-input-radio>
+      <default-input-radio v-for="answer in currentAnswers" :input-name="currentQuestion" :input-value="answer">{{ answer }}</default-input-radio>
       <default-button set-type="submit">Submit</default-button>
     </default-container>
   </form>
