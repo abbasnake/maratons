@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import data from './data.js'
+import data from './data'
+import helperAnimations from './helperAnimations'
 import {
   getKeyValues,
   getCurrentTestKeyValue
@@ -12,7 +13,8 @@ export default new Vuex.Store({
   state: {
     currentTestId: null,
     data: [],
-    username: ''
+    username: '',
+    helperAnimations
   },
   getters: {
     allData: state => state.data,
@@ -20,7 +22,8 @@ export default new Vuex.Store({
     currentTestId: state => state.currentTestId,
     testNames: state => getKeyValues(state.data, 'name'),
     currentTestDescription: state => getCurrentTestKeyValue(state.data, state.currentTestId, 'description'),
-    currentTestQuestions: state => getCurrentTestKeyValue(state.data, state.currentTestId, 'questions')
+    currentTestQuestions: state => getCurrentTestKeyValue(state.data, state.currentTestId, 'questions'),
+    helperAnimations: state => state.helperAnimations
   },
   mutations: {
     setData (state, payload) {
@@ -31,6 +34,12 @@ export default new Vuex.Store({
     },
     setUsername (state, payload) {
       state.username = payload
+    },
+    resetAnimations (state) {
+      state.helperAnimations.changeContent = false
+    },
+    changeContentAnimation (state) {
+      state.helperAnimations.changeContent = true
     }
   },
   actions: {
@@ -42,6 +51,12 @@ export default new Vuex.Store({
     },
     setUsername (context, payload) {
       context.commit('setUsername', payload)
+    },
+    changeContentAnimation (context) {
+      context.commit('changeContentAnimation')
+    },
+    resetAnimations (context) {
+      context.commit('resetAnimations')
     }
   }
 })

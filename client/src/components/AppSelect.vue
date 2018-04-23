@@ -18,6 +18,11 @@ export default {
     changeTest (e) {
       let testNumber = parseInt(e.target.value) // must be number at the moment
       this.$store.dispatch('changeCurrentTest', testNumber)
+      this.$store.dispatch('changeContentAnimation')
+      setTimeout(this.resetAnimations, 3000)
+    },
+    resetAnimations () {
+      this.$store.dispatch('resetAnimations')
     }
   }
 }

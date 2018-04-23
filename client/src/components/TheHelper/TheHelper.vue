@@ -15,7 +15,7 @@ export default {
   computed: {
     classObject () {
       return {
-        'changeContentAnimation': true
+        'changeContentAnimation': this.$store.getters.helperAnimations.changeContent
       }
     }
   }
