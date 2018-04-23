@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$size: 80px;
+$size: 100px;
 
 .helper {
   border: 1px solid white;

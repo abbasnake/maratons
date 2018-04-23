@@ -16,7 +16,7 @@ export default {
       radius: 50,
       rx: 50,
       ry: 50,
-      radiusBend: 0.2,
+      radiusBend: 0.1,
       ySpeed: 0.1,
       xSpeed: 0.3,
       hoverRange: 20, // for hoverBorder method
