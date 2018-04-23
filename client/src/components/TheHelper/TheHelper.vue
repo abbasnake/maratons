@@ -26,7 +26,7 @@ export default {
 $size: 80px;
 
 .helper {
-  // border: 1px solid white;
+  border: 1px solid white;
   position: absolute;
   height: $size;
   left: 20px;
@@ -36,7 +36,7 @@ $size: 80px;
 }
 
 .changeContentAnimation {
-  animation: change-content 1s cubic-bezier(0.86, 0, 0.07, 1);
+  animation: change-content .5s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
 @keyframes change-content {

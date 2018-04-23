@@ -56,7 +56,9 @@ export default new Vuex.Store({
       context.commit('changeContentAnimation')
     },
     resetAnimations (context) {
-      context.commit('resetAnimations')
+      setTimeout(() => {
+        context.commit('resetAnimations')
+      }, 1000)
     }
   }
 })
