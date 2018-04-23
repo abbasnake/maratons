@@ -38,15 +38,18 @@ export default {
       this.xPos = this.xStartPos
       this.yPos = this.yStartPos
     },
-    goTo (x, y) {
-      if (this.xPos >= x) {
-      } else {
-        this.xPos += this.xSpeed
-        this.yPos += this.ySpeed
-      }
+    goTo (x) {
+      if (!(x >= 0)) { this.xSpeed *= -1 }
+      this.xPos += this.xSpeed
+      // if (!(this.xPos >= x)) {
+      //   this.xPos += this.xSpeed
+      //   return false
+      // } else {
+      //   return true
+      // }
     },
     changeContentAnimation () {
-      this.goTo(100, 100)
+      if (this.goTo(100, 0)) { this.goTo(-200, 0)}
     },
     mainAnimation () {
       requestAnimationFrame(this.mainAnimation)
