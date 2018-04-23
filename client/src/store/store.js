@@ -58,7 +58,7 @@ export default new Vuex.Store({
     resetAnimations (context) {
       setTimeout(() => {
         context.commit('resetAnimations')
-      }, 1000)
+      }, 500)
     }
   }
 })

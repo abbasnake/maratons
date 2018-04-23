@@ -26,6 +26,8 @@ export default {
     onSubmit (e) {
       const username = e.target[0].value
       this.$store.dispatch('setUsername', username)
+      this.$store.dispatch('changeContentAnimation')
+      this.$store.dispatch('resetAnimations')
       this.$router.push({path: '/test'})
     }
   }
