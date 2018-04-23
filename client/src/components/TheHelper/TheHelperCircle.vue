@@ -1,6 +1,6 @@
 <template>
   <svg class="svg" xmlns="http://www.w3.org/2000/svg" :viewBox="`0 0 ${boxWidth} ${boxHeight}`">
-    <circle class="svg__circle" :cx="cx" :cy="cy" :r="radius"/>
+    <ellipse class="svg__circle" :cx="cx" :cy="cy" :rx="rx" :ry="ry"/>
   </svg>
 </template>
 
@@ -14,6 +14,9 @@ export default {
       cx: 100,
       cy: 100,
       radius: 50,
+      rx: 50,
+      ry: 50,
+      radiusBend: 0.2,
       ySpeed: 0.1,
       xSpeed: 0.3,
       hoverRange: 20, // for hoverBorder method
@@ -50,8 +53,13 @@ export default {
       this.cx += xDeviation
       this.cy += this.ySpeed
     },
+    bendRadius () {
+      this.rx += this.radiusBend * (Math.random() - Math.random())
+      this.ry += this.radiusBend * (Math.random() - Math.random())
+    },
     hoverAnimation () {
       this.hover()
+      this.bendRadius()
       this.hoverBorder()
       this.avoidBorders()
     },
@@ -69,7 +77,9 @@ export default {
 <style lang="scss" scoped>
 .svg {
   // border: 1px solid black;
-  fill: #333;
+  fill: none;
+  stroke: #222;
+  stroke-width: 2;
   height: 100%;
   width: 100%;
   /*

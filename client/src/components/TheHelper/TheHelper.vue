@@ -1,6 +1,15 @@
 <template>
   <svg class="helper" :class="classObject" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
     <helper-circle></helper-circle>
+    <helper-circle></helper-circle>
+    <helper-circle></helper-circle>
+    <helper-circle></helper-circle>
+    <helper-circle></helper-circle>
+    <helper-circle></helper-circle>
+    <helper-circle></helper-circle>
+    <helper-circle></helper-circle>
+    <helper-circle></helper-circle>
+    <helper-circle></helper-circle>
   </svg>
 </template>
 
