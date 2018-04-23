@@ -14,11 +14,16 @@ export default {
   },
   data () {
     return {
-      xPos: 20,
-      yPos: 100
+      xStartPos: 20,
+      yStartPos: 100,
+      xPos: 0,
+      yPos: 0,
+      xSpeed: 1,
+      ySpeed: 0
     }
   },
   mounted () {
+    this.setInitialPosition()
     this.loop()
   },
   computed: {
@@ -29,8 +34,19 @@ export default {
     }
   },
   methods: {
+    setInitialPosition () {
+      this.xPos = this.xStartPos
+      this.yPos = this.yStartPos
+    },
+    goTo (x, y) {
+      if (this.xPos >= x) {
+      } else {
+        this.xPos += this.xSpeed
+        this.yPos += this.ySpeed
+      }
+    },
     changeContentAnimation () {
-
+      this.goTo(100, 100)
     },
     mainAnimation () {
       requestAnimationFrame(this.mainAnimation)
