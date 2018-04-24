@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @click="onClick">
     <input
       type="radio"
       :value="inputValue"
@@ -31,6 +31,9 @@ export default {
   methods: {
     createRandomId () {
       this.randomId = Math.random().toString(36).substr(2, 10)
+    },
+    onClick () {
+      this.$emit('picked', this.inputValue)
     }
   }
 }
