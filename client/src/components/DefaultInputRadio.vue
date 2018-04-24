@@ -18,7 +18,7 @@ export default {
   name: 'DefaultInputRadio',
   props: {
     inputName: {type: String, default: 'answer'},
-    inputValue: {type: String}
+    inputValue: {type: String, required: true}
   },
   data () {
     return {
