@@ -15,6 +15,7 @@ export default new Vuex.Store({
     currentQuestionIndex: 0,
     data: [],
     username: '',
+    userAnswers: [],
     helperAnimations
   },
   getters: {

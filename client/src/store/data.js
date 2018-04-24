@@ -78,7 +78,8 @@ export default [
         fakes: [
           'fake',
           'ffake',
-          'fffake'
+          'fffake',
+          'ffffake'
         ]
       },
       {
