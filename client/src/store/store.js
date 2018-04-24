@@ -46,6 +46,9 @@ export default new Vuex.Store({
     },
     nextQuestion (state) {
       state.currentQuestionIndex++
+    },
+    addAnswer (state, payload) {
+      state.userAnswers.push(payload)
     }
   },
   actions: {
@@ -68,6 +71,9 @@ export default new Vuex.Store({
     },
     nextQuestion (context) {
       context.commit('nextQuestion')
+    },
+    addAnswer (context, payload) {
+      context.commit('addAnswer', payload)
     }
   }
 })
