@@ -4,7 +4,8 @@ import data from './data'
 import helperAnimations from './helperAnimations'
 import {
   getKeyValues,
-  getCurrentTestKeyValue
+  getCurrentTestKeyValue,
+  getScore
 } from './helpers.js'
 
 Vue.use(Vuex)
@@ -26,7 +27,8 @@ export default new Vuex.Store({
     currentTestDescription: state => getCurrentTestKeyValue(state.data, state.currentTestId, 'description'),
     currentTestQuestions: state => getCurrentTestKeyValue(state.data, state.currentTestId, 'questions'),
     currentQuestionIndex: state => state.currentQuestionIndex,
-    helperAnimations: state => state.helperAnimations
+    helperAnimations: state => state.helperAnimations,
+    score: state => getScore(state.userAnswers)
   },
   mutations: {
     setData (state, payload) {

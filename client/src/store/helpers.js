@@ -29,7 +29,18 @@ const findCurrentTestIndex = (data, id) => {
   return index
 }
 
+const getScore = (userAnswers) => {
+  let correctAnswers = 0
+  for (let i = 0; i < userAnswers.length; i++) {
+    if (userAnswers[i].correctAnswer === userAnswers[i].userAnswer) {
+      correctAnswers++
+    }
+  }
+  return [correctAnswers, userAnswers.length]
+}
+
 export {
   getKeyValues,
-  getCurrentTestKeyValue
+  getCurrentTestKeyValue,
+  getScore
 }
